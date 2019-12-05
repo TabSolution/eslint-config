@@ -1,6 +1,6 @@
 {
-  "name": "eslint-config",
-  "version": "1.0.0",
+  "name": "@tabsolution/eslint-config",
+  "version": "1.0.1",
   "description": "ESLint and Prettier Config from TabSolution",
   "author": "Turuu <sturuu58@gmail.com> (https://github.com/Turuus)",
   "license": "MIT",
@@ -14,7 +14,7 @@
   ],
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"No test specified\"",
     "lint": "eslint .",
     "lint:fix": "eslint --fix"
   },
@@ -48,5 +48,8 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^1.4.0",
     "prettier": "^1.16.4"
+  },
+  "dependencies": {
+    "np": "^5.2.1"
   }
 }
