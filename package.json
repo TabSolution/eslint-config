@@ -1,6 +1,6 @@
 {
   "name": "@tabsolution/eslint-config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ESLint and Prettier Config from TabSolution",
   "author": "Turuu <sturuu58@gmail.com> (https://github.com/Turuus)",
   "license": "MIT",
