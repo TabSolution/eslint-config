@@ -1,7 +1,7 @@
 # TabSolution™ Eslint and Prettier Setup
 These are my settings for ESLint and Prettier
 
-You might like them - or you might not. Don't worry you can always change them.
+Don't worry we can always update them.
 
 ## What it does
 * Lints JavaScript based on the latest standards
@@ -35,6 +35,7 @@ npx install-peerdeps --dev @tabsolution/eslint-config
 
 ```json
 "scripts": {
+  "test": "echo \"No test specified\"",
   "lint": "eslint .",
   "lint:fix": "eslint . --fix"
 },
@@ -57,31 +58,72 @@ ESLint will look for one in your home directory
 
 * `~/.eslintrc` for mac
 * `C:\Users\username\.eslintrc` for windows
+In your `.eslintrc` file, it should look like this:
+
+```json
+{
+  "extends": [
+    "wesbos"
+  ]
+}
+```
 
 3. To use from the CLI, you can now run `eslint .` or configure your editor as we show next.
 
 ## Settings
 
-If you'd like to overwrite eslint or prettier settings, you can add the rules in your `.eslintrc` file. The [ESLint rules](https://eslint.org/docs/rules/) go directly under `"rules"` while [prettier options](https://prettier.io/docs/en/options.html) go under `"prettier/prettier"`. Note that prettier rules overwrite anything in my config (trailing comma, and single quote), so you'll need to include those as well. 
+### .eslintrc settings
+If you'd like to overwrite eslint or prettier settings, you can add the rules in your `.eslintrc` file. The [ESLint rules](https://eslint.org/docs/rules/) go directly under `"rules"` while [prettier options](https://prettier.io/docs/en/options.html) go under `"prettier/prettier"`. 
 
 ```js
-{
-  "extends": [
-    "tabsolution"
-  ],
-  "rules": {
-    "no-console": 2,
-    "prettier/prettier": [
-      "error",
-      {
-        "trailingComma": "es5",
-        "singleQuote": true,
-        "printWidth": 120,
-        "tabWidth": 8,
-      }
-    ]
-  }
-}
+module.exports = {
+  root: true,
+  extends: ['@tabsolution/eslint-config', 'prettier', 'prettier/react'],
+  plugins: ['prettier'],
+  rules: {
+    camelcase: 'off',
+
+    // 'global-require': 0,
+    'react/prop-types': 0,
+    'no-use-before-define': ['error', { variables: false }],
+    // 'no-undef': 0,
+    // 'react/no-this-in-sfc': 0,
+    // 'react/jsx-no-bind': 0,
+    // 'no-prototype-builtins': 0,
+    // 'react/no-unused-prop-types': 0,
+    // 'import/no-extraneous-dependencies': 0,
+    // 'react/no-unused-state': 0,
+    // 'react/destructuring-assignment': 0,
+    // 'react/jsx-no-duplicate-props': 0,
+    'no-shadow': 0,
+    'array-callback-return': 0,
+    // "no-console": 2,
+    "prettier/prettier": "error"
+  },
+  globals: {
+    // "__CLIENT__": true,
+    // "__SERVER__": true,
+    __DEV__: true,
+  },
+  settings: {
+    'import/resolver': {
+      'babel-module': {},
+    },
+  },
+};
+
+```
+### .prettierrc settings
+If you'd like to overwrite eslint or prettier settings, you can add the rules in your `.prettierrc` file. Note that prettier rules overwrite anything in my config (trailing comma, and single quote), so you'll need to include those as well. 
+
+```js
+module.exports = {
+  bracketSpacing: true,
+  jsxBracketSameLine: false,
+  singleQuote: true,
+  trailingComma: 'all',
+  tabWidth: 2,
+};
 ```
 
 ## With VS Code
@@ -93,19 +135,14 @@ Once you have done one, or both, of the above installs. You probably want your e
 1. Install the [ESLint package](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 2. Now we need to setup some VS Code settings via `Code/File` → `Preferences` → `Settings`. It's easier to enter these settings while editing the `settings.json` file, so click the `{}` icon in the top right corner:
   ```js
-    // These are all my auto-save configs
-  "editor.formatOnSave": true,
-  // turn it off for JS and JSX, we will do this via eslint
-  "[javascript]": {
-    "editor.formatOnSave": false
-  },
-  "[javascriptreact]": {
-    "editor.formatOnSave": false
-  },
-  // tell the ESLint plugin to run on save
-  "eslint.autoFixOnSave": true,
-  // Optional BUT IMPORTANT: If you have the prettier extension enabled for other languages like CSS and HTML, turn it off for JS since we are doing it through Eslint already
-  "prettier.disableLanguages": ["javascript", "javascriptreact"],
+  {
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    // tell the ESLint plugin to run on save
+    "eslint.autoFixOnSave": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+}
   ```
 
 ## With Create React App
