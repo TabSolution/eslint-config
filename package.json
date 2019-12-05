@@ -22,7 +22,7 @@
     "type": "git",
     "url": "git+https://github.com/TabSolution/eslint-config.git"
   },
-  "homepage": "https://github.com/TabSolution/eslint-config#readme",
+  "homepage": "http://tabsolution.jp/",
   "peerDependencies": {
     "babel-eslint": "^9.0.0",
     "eslint": "^6.1.0",
