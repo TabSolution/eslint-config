@@ -2,14 +2,8 @@
   "name": "eslint-config",
   "version": "1.0.0",
   "description": "ESLint and Prettier Config from TabSolution",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TabSolution/eslint-config.git"
-  },
+  "author": "Turuu <sturuu58@gmail.com> (https://github.com/Turuus)",
+  "license": "MIT",
   "keywords": [
     "javascript",
     "ecmascript",
@@ -18,10 +12,41 @@
     "config",
     "prettier"
   ],
-  "author": "Turuu <sturuu58@gmail.com> (https://github.com/Turuus)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/TabSolution/eslint-config/issues"
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix"
   },
-  "homepage": "https://github.com/TabSolution/eslint-config#readme"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TabSolution/eslint-config.git"
+  },
+  "homepage": "https://github.com/TabSolution/eslint-config#readme",
+  "peerDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-html": "^5.0.3",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-react-hooks": "^1.4.0",
+    "prettier": "^1.16.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-html": "^5.0.3",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^1.4.0",
+    "prettier": "^1.16.4"
+  }
 }
