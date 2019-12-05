@@ -1,0 +1,27 @@
+{
+  "name": "eslint-config",
+  "version": "1.0.0",
+  "description": "ESLint and Prettier Config from TabSolution",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TabSolution/eslint-config.git"
+  },
+  "keywords": [
+    "javascript",
+    "ecmascript",
+    "eslint",
+    "lint",
+    "config",
+    "prettier"
+  ],
+  "author": "Turuu <sturuu58@gmail.com> (https://github.com/Turuus)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TabSolution/eslint-config/issues"
+  },
+  "homepage": "https://github.com/TabSolution/eslint-config#readme"
+}
