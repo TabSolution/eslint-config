@@ -63,7 +63,7 @@ In your `.eslintrc` file, it should look like this:
 ```json
 {
   "extends": [
-    "wesbos"
+    "@tabsolution/eslint-config"
   ]
 }
 ```
