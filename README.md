@@ -1,3 +1,5 @@
+![npm](https://img.shields.io/npm/dt/@tabsolution/eslint-config)
+
 # TabSolution™ Eslint and Prettier Setup
 These are my settings for ESLint and Prettier
 
